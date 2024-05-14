@@ -1,3 +1,15 @@
+# Mint Non Fungible Tokens On The Open Network
+
+## usage
+install package
+```
+yarn install
+```
+startup
+```
+yarn run dev
+```
+
 description for collection.json (/src/data/metadata/collection.json)
 ```
 name	=> NFT name. Recommended length: No more than 15-30 characters
@@ -8,3 +20,6 @@ lottie	=> Link to the json file with Lottie animation. If specified, the Lottie 
 content_url =>	Link to additional content.
 content_type =>	The type of content added through the content_url link. For example, a video/mp4 file.
 ```
+
+# Reference
+[Step by step NFT collection minting](https://docs.ton.org/develop/dapps/tutorials/collection-minting)
