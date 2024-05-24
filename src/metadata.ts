@@ -26,8 +26,8 @@ export async function updateMetadataFiles(
 
     const metadata = JSON.parse(file.toString());
     metadata.image =
-      index != files.length - 1
-        ? `ipfs://${imagesIpfsHash}/${index}.jpg`
+      index !== 0
+        ? `ipfs://${imagesIpfsHash}/${index - 1}.jpg`
         : `ipfs://${imagesIpfsHash}/logo.jpg`;
 
     await writeFile(filePath, JSON.stringify(metadata));

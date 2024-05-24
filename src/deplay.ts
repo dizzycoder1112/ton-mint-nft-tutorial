@@ -1,10 +1,18 @@
-import { OpenedWallet } from "utils";
+import { OpenedWallet } from "./utils";
 
-export async function waitSeqno(seqno: number, wallet: OpenedWallet) {
-  for (let attempt = 0; attempt < 10; attempt++) {
-    await sleep(2000);
-    const seqnoAfter = await wallet.contract.getSeqno();
-    if (seqnoAfter == seqno + 1) break;
+export async function waitSeqno(
+  seqno: number,
+  wallet: OpenedWallet,
+  waitMilliSecond: number = 5000
+) {
+  try {
+    for (let attempt = 0; attempt < 10; attempt++) {
+      await sleep(waitMilliSecond);
+      const seqnoAfter = await wallet.contract.getSeqno();
+      if (seqnoAfter == seqno + 1) break;
+    }
+  } catch (error) {
+    console.error("Error waiting for seqno", error);
   }
 }
 

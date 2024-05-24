@@ -6,8 +6,8 @@ import {
   internal,
   SendMode,
   StateInit,
-} from "ton-core";
-import { OpenedWallet } from "utils";
+} from "@ton/core";
+import { OpenedWallet } from "../utils";
 
 export class NftMarketplace {
   public ownerAddress: Address;
